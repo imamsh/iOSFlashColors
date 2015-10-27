@@ -29,7 +29,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="myView" destination="8bC-Xf-vdC" id="QqJ-yj-nVy"/>
+                        <outlet property="clickBtn" destination="nig-wn-2yV" id="2Nm-nx-25X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,35 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //To control looping the colors for each click
     var i=0
-    @IBOutlet var myView: UIView!
-    @IBAction func buttonClick(sender: AnyObject) {
+
+    @IBOutlet weak var clickBtn: UIButton!
+    @IBAction func buttonClick(_: AnyObject) {
+        //color change will be handled and each click will be counted
         changeColor(++i)
     }
 
-    //hello world. testing 123.
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func changeColor(iteration: Int){
-        //there is another way to change the color of the view, which is self.view.backgroundColor = UIColor.yellowColor(). Here I created a outlet for the view. Want to know which apporach is good !!
-        
         switch iteration {
             case 1:
-                myView.backgroundColor = UIColor.yellowColor()
+                UIView.animateWithDuration(1.5, animations: {
+                    self.view.backgroundColor = UIColor.purpleColor()
+                    self.clickBtn.backgroundColor = UIColor.whiteColor()
+                })
             case 2:
-                myView.backgroundColor = UIColor.redColor()
+                UIView.animateWithDuration(1.5, animations: {
+                    self.view.backgroundColor = UIColor.orangeColor()
+                })
             case 3:
-                myView.backgroundColor = UIColor.purpleColor()
+                UIView.animateWithDuration(1.5, animations: {
+                    self.view.backgroundColor = UIColor.grayColor()
+                })
             default:
+                UIView.animateWithDuration(1.5, animations: {
+                    self.view.backgroundColor = UIColor.whiteColor()
+                })
                 i=0
-                myView.backgroundColor = UIColor.whiteColor()
         }
     }
 
