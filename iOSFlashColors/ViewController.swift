@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let NUMBER_OF_COLORS = 4
     //To control looping the colors for each click
     var i=0
 
-    @IBOutlet weak var clickBtn: UIButton!
     @IBAction func buttonClick(_: AnyObject) {
         //color change will be handled and each click will be counted
-        changeColor(++i)
+        changeColor(++i % NUMBER_OF_COLORS)
     }
 
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
             case 1:
                 UIView.animateWithDuration(1.5, animations: {
                     self.view.backgroundColor = UIColor.purpleColor()
-                    self.clickBtn.backgroundColor = UIColor.whiteColor()
                 })
             case 2:
                 UIView.animateWithDuration(1.5, animations: {
@@ -46,9 +45,7 @@ class ViewController: UIViewController {
                 UIView.animateWithDuration(1.5, animations: {
                     self.view.backgroundColor = UIColor.whiteColor()
                 })
-                i=0
         }
     }
-
 }
 
